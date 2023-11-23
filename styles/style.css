@@ -1,0 +1,281 @@
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%; /*hace que un 1rem sea equivalente a 10px */
+}
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+/*globales*/
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: #333;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+}
+h1, h2, h3, h4{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 2;
+}
+
+h1{
+    font-size: 4.8rem;
+}
+
+h2{
+    font-size: 4rem;
+}
+
+h3{
+    font-size: 3.2rem;
+}
+
+h4{
+    font-size: 2.8rem;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+
+.no-margin{
+    margin: 0;
+}
+
+.no-padding{
+    padding: 0;
+}
+
+.centrar-texto{
+    text-align: center;
+}
+/*estilos para el header*/
+
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #fff;
+}
+
+.contenedor__flex > * {
+    margin-right: 1rem;
+}
+.contenedor__flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    justify-items: center;
+    padding: 0;
+}
+
+.header__logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    height: 15rem;
+    margin-bottom: 5rem;
+    padding: 0;
+ 
+}
+
+.header__carrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;
+    height: 6rem;
+    margin-bottom: 3.5rem;
+    margin-right: 7rem;
+    padding: 0;
+}
+
+
+
+.header__buscar input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    width: 50rem;
+    height: 5rem;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    margin: 0 auto;
+    position: relative;
+    right: 2rem;
+    padding: 0;
+
+}
+
+.header__menu{
+    margin: 0 auto;
+    padding: 0;
+    
+}
+.menu__barra{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    bottom: 7.2rem;
+    padding: 1rem 0;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ccc;
+}
+
+
+.menu__barra a{
+    color: black;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.menu__barra a:hover {
+    background-color: #ddd;
+}
+
+/*una linea que se muestre abajo de las letras*/
+.hover1:hover, .hover2:hover, .hover3:hover,
+.hover4:hover, .hover5:hover{
+    text-decoration: underline;
+
+}
+/* Articulos */
+
+
+.contenedor__texto{
+    padding: 2rem;
+
+}
+.articulos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+.articulos__grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+}
+.articulos__grid__item{
+    width: 30rem;
+    border-radius: 10px;
+    margin: 2rem;
+
+}
+
+/* codigo donde pone todas las imagenes iguales */
+.articulos__grid__item img{
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+/* que se agrande la imagen sin dañar la estructura  */
+.articulos__grid__item img:hover{
+    transform: scale(1.1);
+    transition: transform 0.5s;
+}
+/* codigo donde pone las letras */
+.articulos__grid__item h2{
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* botones */
+
+.contar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
+.Botones{
+    text-align: center;
+
+}
+
+.Botones button{
+    padding: 50px 50px; /* Ajusta el padding según sea necesario */
+  font-size: 16px; /* Tamaño de la fuente */
+  margin: 5px; /* Espacio entre los botones */
+  border-radius: 5px; /* Borde redondeado */
+  border: 1px solid #ccc; /* Borde con color gris claro */
+  background-color: #f0f0f0; /* Color de fondo */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  width: 10rem;
+}
+
+.Botones .incrementar{
+    background-color: #008000;
+    color: white;
+    border: black solid 2px;
+    border-radius: 5px;
+    padding: 0.8rem;
+    font-size: 1rem;
+
+}
+
+.Botones .decrementar {
+    background-color: #ff0000;
+    color: white;
+    border: black solid 2px;
+    border-radius: 5px;
+    padding: 0.8rem;
+    font-size: 1rem;
+}
+
+.Botones .comprar{
+    background-color: #000000;
+    color: #ffffff;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+}
+
+.Botones__comprar .comprar:hover {
+    background-color: #2980b9; /* Cambio de color de fondo al pasar el mouse */
+    border-color: #2980b9; /* Cambio de color del borde al pasar el mouse */
+  }
+
+.footer{
+    background-color: black;
+    color: white;
+    padding: 1.5rem;
+    font-size: 1rem;
+    margin-top: 5rem;
+    text-align: center;
+}
+
+
+
