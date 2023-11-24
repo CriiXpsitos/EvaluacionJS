@@ -1,4 +1,18 @@
+
+precioTotal = 0;
+const precios = [
+  100,  // Precio de la máquina 1
+  150,  // Precio de la máquina 2
+  200,  // Precio de la máquina 3
+  250,  // Precio de la máquina 4
+  300,  // Precio de la máquina 5
+  350   // Precio de la máquina 6
+];
+
+
 // Creamos un objeto que almacena la información de los contadores
+
+
 const counters = [
     { id: 'contar', incrementId: 'incre', decrementId: 'decreme', compraId: 'compra', count: 0 },
     { id: 'contar2', incrementId: 'incre2', decrementId: 'decreme2', compraId: 'compra2', count: 0 },
@@ -35,16 +49,49 @@ const counters = [
     // Agrega lógica para el botón de compra si es necesario
     if (compraButton) {
       compraButton.addEventListener('click', () => {
-        // Lógica para la acción de compra
-        console.log(`Compra realizada para contador ${index + 1}`);
+        if (counters[index].count > 0) {
+          mostrar(index);
+        }
       });
     }
   });
   
   // agreagamos un switch para que cada comprarBoton me muestre un precio distinto en un modulo de html 
-  function comprarBoton(index) {
+  function mostrar(index) {
+    const precios = [100, 150, 200, 250, 300, 350];
+
     switch (index) {
-      case 0:
-        
-  }
+        case 0:
+            precioTotal = (precios[index] * counters[index].count) * 0.6;
+            document.getElementById('resultado').innerHTML = `Precio Total es: ${precioTotal}`;
+            document.getElementById('respuesta').style.display = "block";
+            break;
+        case 1:
+            precioTotal = (precios[index] * counters[index].count) * 0.2;
+            document.getElementById('resultado2').innerHTML = `Precio Total es: ${precioTotal}`;
+            document.getElementById('respuesta2').style.display = "block";
+            break;
+        case 2:
+            precioTotal = precios[index] * counters[index].count;
+            document.getElementById('resultado3').innerHTML = `Precio Total es: ${precioTotal}`;
+            document.getElementById('respuesta3').style.display = "block";
+            break;
+        case 3:
+            precioTotal = (precios[index] * counters[index].count) * 0.9;
+            document.getElementById('resultado4').innerHTML = `Precio Total es: ${precioTotal}`;
+            document.getElementById('respuesta4').style.display = "block";
+            break;
+        case 4:
+            precioTotal = (precios[index] * counters[index].count) * 0.1;
+            document.getElementById('resultado5').innerHTML = `Precio Total es: ${precioTotal}`;
+            document.getElementById('respuesta5').style.display = "block";
+            break;
+        case 5:
+            precioTotal = precios[index] * counters[index].count;
+            document.getElementById('resultado6').innerHTML = `Precio Total es: ${precioTotal}`;
+            document.getElementById('respuesta6').style.display = "block";
+            break;
+        default:
+            return 'No hay precio para este contador';
+    }
 }
