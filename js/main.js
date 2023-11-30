@@ -10,6 +10,8 @@ const precios = [
 ];
 
 
+
+
 // Creamos un objeto que almacena la información de los contadores
 
 
@@ -22,6 +24,14 @@ const counters = [
     { id: 'contar6', incrementId: 'incre6', decrementId: 'decreme6', compraId: 'compra6', count: 0 },
 
   ];
+
+  function calcularValorTotal() {
+    let total = 0;
+    counters.forEach((counter, index) => {
+      total += precios[index] * counter.count;
+    });
+    return total;
+  }
   
   // Función genérica para manejar el incremento y decremento de contadores
   function manejarContador(action, index) {
@@ -35,7 +45,15 @@ const counters = [
     }
   
     contadorElement.innerHTML = counters[index].count;
+
+    contadorElement.innerHTML = counters[index].count;
+    actualizarValorTotal();
   }
+
+  
+  
+  
+  
   
   // Agregamos event listeners para todos los contadores
   counters.forEach((counter, index) => {
@@ -62,12 +80,12 @@ const counters = [
 
     switch (index) {
         case 0:
-            precioTotal = (precios[index] * counters[index].count) * 0.6;
+            precioTotal = (precios[index] * counters[index].count) ;
             document.getElementById('resultado').innerHTML = `Precio Total es: ${precioTotal}`;
             document.getElementById('respuesta').style.display = "block";
             break;
         case 1:
-            precioTotal = (precios[index] * counters[index].count) * 0.2;
+            precioTotal = (precios[index] * counters[index].count) ;
             document.getElementById('resultado2').innerHTML = `Precio Total es: ${precioTotal}`;
             document.getElementById('respuesta2').style.display = "block";
             break;
@@ -77,12 +95,12 @@ const counters = [
             document.getElementById('respuesta3').style.display = "block";
             break;
         case 3:
-            precioTotal = (precios[index] * counters[index].count) * 0.9;
+            precioTotal = (precios[index] * counters[index].count) ;
             document.getElementById('resultado4').innerHTML = `Precio Total es: ${precioTotal}`;
             document.getElementById('respuesta4').style.display = "block";
             break;
         case 4:
-            precioTotal = (precios[index] * counters[index].count) * 0.1;
+            precioTotal = (precios[index] * counters[index].count) ;
             document.getElementById('resultado5').innerHTML = `Precio Total es: ${precioTotal}`;
             document.getElementById('respuesta5').style.display = "block";
             break;
@@ -95,3 +113,11 @@ const counters = [
             return 'No hay precio para este contador';
     }
 }
+function actualizarValorTotal() {
+  const valorTotalElement = document.getElementById('valorTotal');
+  const total = calcularValorTotal();
+  valorTotalElement.innerHTML = `Valor Total: ${total}`;
+}
+
+const valorTotal = calcularValorTotal();
+document.getElementById('valorTotal').innerHTML = `Valor Total: ${valorTotal}`;
